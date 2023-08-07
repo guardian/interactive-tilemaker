@@ -18,3 +18,5 @@ RUN  wget -O awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.z
 RUN unzip awscliv2.zip
 RUN rm awscliv2.zip
 RUN ./aws/install
+
+CMD sleep infinity

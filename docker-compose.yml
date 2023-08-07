@@ -1,5 +1,0 @@
-services:
-  tilegenerator:
-    build: tilegenerator
-    stdin_open: true 
-    tty: true
