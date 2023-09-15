@@ -8,6 +8,6 @@ npx @guardian/cdk@latest new \
   --stage PROD \
   --package-manager npm
 ```
-- [ ] Setup the project in CI and CD
+- [ ] Setup the project in CI (https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) and CD
 - [ ] Run the Dockerfile in AWS (via GuCDK)
 - [ ] Profit?
