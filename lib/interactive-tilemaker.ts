@@ -1,7 +1,7 @@
 import type { GuStackProps } from "@guardian/cdk/lib/constructs/core";
 import { GuStack } from "@guardian/cdk/lib/constructs/core";
 import type { App } from "aws-cdk-lib";
-import { Compatibility, ContainerImage, CpuArchitecture, OperatingSystemFamily, TaskDefinition, Cluster, FargateService } from "aws-cdk-lib/aws-ecs";
+import { Cluster, Compatibility, ContainerImage, CpuArchitecture, FargateService, OperatingSystemFamily, TaskDefinition } from "aws-cdk-lib/aws-ecs";
 
 export class InteractiveTilemaker extends GuStack {
   constructor(scope: App, id: string, props: GuStackProps) {
@@ -25,7 +25,7 @@ export class InteractiveTilemaker extends GuStack {
       memoryLimitMiB: 2048,
     });
 
-    const service = new FargateService(this, "TileMakerService", {
+    new FargateService(this, "TileMakerService", {
       cluster,
       taskDefinition: task,
     })
