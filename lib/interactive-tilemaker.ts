@@ -8,6 +8,7 @@ import {
 	ContainerImage,
 	CpuArchitecture,
 	FargateService,
+	LogDriver,
 	OperatingSystemFamily,
 	TaskDefinition,
 } from 'aws-cdk-lib/aws-ecs';
@@ -47,6 +48,7 @@ export class InteractiveTilemaker extends GuStack {
 		task.addContainer('HelloWorldContainer', {
 			image: ContainerImage.fromRegistry('hello-world'),
 			memoryLimitMiB: 2048,
+			logging: LogDriver.awsLogs({streamPrefix: "tile-maker/hello-world"})
 		});
 
 		new FargateService(this, 'TileMakerService', {
