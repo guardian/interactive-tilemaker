@@ -146,7 +146,7 @@ exports[`The InteractiveTilemaker stack matches the snapshot 1`] = `
         "ContainerDefinitions": [
           {
             "Essential": true,
-            "Image": "docker/hello-world",
+            "Image": "hello-world",
             "Memory": 2048,
             "Name": "HelloWorldContainer",
           },

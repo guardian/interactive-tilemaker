@@ -45,7 +45,7 @@ export class InteractiveTilemaker extends GuStack {
 		});
 
 		task.addContainer('HelloWorldContainer', {
-			image: ContainerImage.fromRegistry('docker/hello-world'),
+			image: ContainerImage.fromRegistry('hello-world'),
 			memoryLimitMiB: 2048,
 		});
 
