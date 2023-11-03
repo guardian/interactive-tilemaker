@@ -7,7 +7,6 @@ import {
 	Compatibility,
 	ContainerImage,
 	CpuArchitecture,
-	FargateService,
 	LogDriver,
 	OperatingSystemFamily,
 	TaskDefinition,
@@ -33,7 +32,7 @@ export class InteractiveTilemaker extends GuStack {
 			privateSubnetIds: privateSubnets.map((subnet) => subnet.subnetId),
 		});
 
-		const cluster = new Cluster(this, 'TileMakerCluster', { vpc });
+		new Cluster(this, 'TileMakerCluster', { vpc });
 
 		const task = new TaskDefinition(this, 'TileMakerTask', {
 			compatibility: Compatibility.FARGATE,
@@ -49,11 +48,6 @@ export class InteractiveTilemaker extends GuStack {
 			image: ContainerImage.fromRegistry('hello-world'),
 			memoryLimitMiB: 2048,
 			logging: LogDriver.awsLogs({streamPrefix: "tile-maker/hello-world"})
-		});
-
-		new FargateService(this, 'TileMakerService', {
-			cluster,
-			taskDefinition: task,
 		});
 	}
 }
