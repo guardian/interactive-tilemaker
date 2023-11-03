@@ -9,5 +9,10 @@ npx @guardian/cdk@latest new \
   --package-manager npm
 ```
 - [x] Setup the project in CI (https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) and CD
-- [ ] Run the Dockerfile in AWS (via GuCDK)
+- [x] Run the Dockerfile in AWS (via GuCDK)
+   - [x] Run the HelloWorld image in AWS
+   - [ ] Run our image in AWS
+       - [ ] Make the repo public
+       - [ ] Publish image to GitHub Packages during CI
+- [ ] Run the task on demand
 - [ ] Profit?
